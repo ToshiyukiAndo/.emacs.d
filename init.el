@@ -1,4 +1,4 @@
-;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
+;;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 ;; ------------------------------------------------------------------------
 ;; @ load-path
 
@@ -18,6 +18,10 @@
 ;; 2つ以上フォルダを指定する場合の引数 => (add-to-load-path "elisp" "xxx" "xxx")
 (add-to-load-path "elisp")
 
+(add-to-list 'custom-theme-load-path
+             (file-name-as-directory "~/.emacs.d/elisp/themes/"))
+
+
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
@@ -35,8 +39,9 @@
 (put 'upcase-region 'disabled nil)
 ;;C-zをアンドゥに変更
 (define-key global-map(kbd"C-z")'undo)
-;;C-wをコピーに
-(global-set-key "\C-w" "\M-w")
+
+;;M-sを置換に
+(define-key global-map(kbd"C-r")'replace-string)
 
 ;;スクロール一行ずつ
 (setq scroll-step 1)
@@ -67,13 +72,13 @@
 (setq initial-scratch-message "")
 
 ;; ツールバー非表示
-(tool-bar-mode -1)
+;;(tool-bar-mode -1)
 
 ;; メニューバーを非表示
 (menu-bar-mode -1)
 
 ;; スクロールバー非表示
-(set-scroll-bar-mode nil)
+;;(set-scroll-bar-mode nil)
 
 ;; タイトルバーにファイルのフルパス表示
 (setq frame-title-format
@@ -84,6 +89,7 @@
 (set-face-attribute 'linum nil
 		    :foreground "#808080"
 		    :height 0.9)
+
 
 ;;キー移動を5行づつするやつ
 (define-key global-map "\C-l" (kbd "C-u 5 C-n"))
@@ -107,16 +113,24 @@
 (setq show-paren-style 'expression)
 
 ;; 括弧の範囲色
-(set-face-background 'show-paren-match-face "#696969")
+(set-face-background 'show-paren-match-face "#505050")
 
 ;; 選択領域の色
-(set-face-background 'region "#d3d3d3")
+(set-face-background 'region "#306969")
 
 ;; タブをスペースで扱う
 (setq-default indent-tabs-mode nil)
 
 ;; タブ幅
-(custom-set-variables '(tab-width 4))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (auto-complete smartparens pos-tip php-mode gnuplot-mode flycheck)))
+ '(tab-width 4))
 
 ;; yes or noをy or n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -124,8 +138,15 @@
 ;;バックアップファイルを作らない
 (setq backup-inhibited t)
 
+;;バックアップファイルの場所を指定
+
+
 ;;カラーテーマ
 (load-theme 'manoj-dark t)
+;;(load-theme 'dark-laptop t)
+
+
+(set-face-background 'mode-line "Glay")
 
 ;; redoできるようにする
 ;; http://www.emacswiki.org/emacs/redo+.el
@@ -135,6 +156,7 @@
 
 ;; Auto Complete
 ;;
+
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-modes 'text-mode)         ;; text-modeでも自動的に有効にする
@@ -147,7 +169,7 @@
 
 
 ;;php-mode
-(require 'php-mode)
+;;(require 'php-mode)
 
 ;;括弧を表示する
 (require 'smartparens-config)
@@ -166,3 +188,12 @@
 
 (setq interprogram-cut-function 'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
+
+
+;;flycheck
+(require 'flycheck)
+(global-flycheck-mode)
+
+;;flycheckの設定
+(define-key global-map (kbd "\C-cn") 'flycheck-next-error)
+(define-key global-map (kbd "\C-cp") 'flycheck-previous-error)
