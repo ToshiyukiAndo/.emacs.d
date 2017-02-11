@@ -1,0 +1,78 @@
+;;; -*- coding: utf-8 -*-
+(("/Users/negi/.emacs.d/init.el" . 6533)
+ ("/Users/negi/.emacs.d/themes/myTheme-manojo-theme.el" . 6647)
+ ("/Users/negi/.emacs.d/elisp/color-theme-6.6.0/themes/color-theme-library.el" . 21449)
+ ("/Users/negi/Applications/"
+  (dired-filename . "/Users/negi/Applications/.localized"))
+ ("/Users/negi/"
+  (dired-filename . "/Users/negi/Applications"))
+ ("/Users/negi/.emacs.d/recentf" . 248)
+ ("/Users/negi/.emacs.d/elpa/madhat2r-theme-20170202.1630/madhat2r-theme-autoloads.el" . 442)
+ ("/Users/negi/.emacs.d/elpa/undo-tree-20161012.701/undo-tree-autoloads.el" . 1653)
+ ("/Users/negi/.emacs.d/yasnippets/"
+  (dired-filename . "/Users/negi/.emacs.d/yasnippets/.gitignore"))
+ ("/Users/negi/Documents/とりあえず残しておく資料/"
+  (dired-filename . "/Users/negi/Documents/とりあえず残しておく資料/.DS_Store"))
+ ("/Users/negi/Documents/"
+  (dired-filename . "/Users/negi/Documents/IPLAB"))
+ ("/Users/negi/Documents/IPLAB/"
+  (dired-filename . "/Users/negi/Documents/IPLAB/.."))
+ ("/Users/negi/Documents/IPLAB/LabPrograms/"
+  (dired-filename . "/Users/negi/Documents/IPLAB/LabPrograms/README.md"))
+ ("/Users/negi/Documents/IPLAB/LabPrograms/README.md" . 662)
+ ("/Users/negi/.emacs.d/"
+  (dired-filename . "/Users/negi/.emacs.d/init.el"))
+ ("/Users/negi/.emacs.d/elpa/yasnippet-20170203.626/yasnippet-autoloads.el" . 1604)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/Trans.py" . 3536)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/DataTranslate4Term.py" . 1372)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment_term.py" . 17881)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/recognition-str.py" . 31744)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/recognition.py" . 31511)
+ ("/Users/negi/.emacs.d/elpa/jedi-20160425.2156/jedi-autoloads.el" . 944)
+ ("/Users/negi/.emacs.d/elpa/jedi-core-20170121.610/jedi-core-autoloads.el" . 3755)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment_uist.py" . 2660)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment.py" . 39477)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/DataTranslate4Here.py" . 1459)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/DataTranslate4.py" . 868)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/"
+  (dired-filename . "/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/recognitionHG.py"))
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/recognitionHG.py" . 32001)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/bt-recognition.py" . 15662)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/bb-recognition.py" . 16221)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/Qt_Audio.py" . 40)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/Qt_mouse.py" . 45)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/Qt_Judge.py" . 11484)
+ ("/Users/negi/.emacs.d/elpa/markdown-mode-20161222.1416/markdown-mode-autoloads.el" . 659)
+ ("/Users/negi/.emacs.d/elpa/epc-20140609.2234/epc-autoloads.el" . 263)
+ ("/Users/negi/.emacs.d/elpa/concurrent-20161228.1930/concurrent-autoloads.el" . 246)
+ ("/Users/negi/.emacs.d/elpa/ctable-20140304.1659/ctable-autoloads.el" . 238)
+ ("/Users/negi/.emacs.d/elpa/python-environment-20150310.153/python-environment-autoloads.el" . 327)
+ ("/Users/negi/.emacs.d/elpa/deferred-20161228.1930/deferred-autoloads.el" . 242)
+ ("/Users/negi/.emacs.d/elisp/py-autopep8.el" . 4473)
+ ("/Users/negi/.emacs.d/url/" . 173)
+ ("/Users/negi/Downloads/"
+  (dired-filename . "/Users/negi/Downloads/.DS_Store"))
+ ("/Users/negi/Library/"
+  (dired-filename . "/Users/negi/Library/.localized"))
+ ("/Users/negi/Dropbox/"
+  (dired-filename . "/Users/negi/Dropbox/.."))
+ ("/Users/negi/.subversion/"
+  (dired-filename . "/Users/negi/.subversion/.."))
+ ("/Users/negi/.emacs.d/elisp/"
+  (dired-filename . "/Users/negi/.emacs.d/elisp/py-autopep8.el"))
+ ("/Users/negi/.emacs.d/elpa/py-autopep8-20160925.352/py-autopep8-autoloads.el" . 651)
+ ("/Users/negi/.emacs.d/elpa/indent-guide-20161226.2332/indent-guide-autoloads.el" . 1347)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/WISS_Data/12set_data/"
+  (dired-filename . "/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/WISS_Data/12set_data/.."))
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/WISS_Data/"
+  (dired-filename . "/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/WISS_Data/.."))
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/Qt_graph.py" . 7033)
+ ("/Users/negi/Documents/IPLAB/LabFiles/README.md" . 10)
+ ("/Users/negi/Documents/IPLAB/LabFiles/.gitignore" . 7)
+ ("/Users/negi/.gitconfig" . 335)
+ ("/Users/negi/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap" . 4895)
+ ("/Users/negi/Library/KeyBindings/DefaultKeyBinding.dict" . 72)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/Old_programs/cross_validation_RF.py" . 550)
+ ("/Users/negi/Library/Application Support/Sublime Text 3/Packages/LaTeXTools/builders/traditionalBuilder.py" . 866)
+ ("/Users/negi/Pictures/"
+  (dired-filename . "/Users/negi/Pictures/.DS_Store")))

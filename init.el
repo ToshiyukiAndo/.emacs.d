@@ -13,7 +13,7 @@
 	    (normal-top-level-add-subdirs-to-load-path))))))
 
 
-
+    
 ;; load-pathに追加するフォルダ
 ;; 2つ以上フォルダを指定する場合の引数 => (add-to-load-path "elisp" "xxx" "xxx")
 (add-to-load-path "elisp")
@@ -37,8 +37,11 @@
 ;;時間表時
 (display-time)
 (put 'upcase-region 'disabled nil)
+
 ;;C-zをアンドゥに変更
-(define-key global-map(kbd"C-z")'undo)
+;;(define-key global-map(kbd"C-z")'undo)
+(define-key global-map "\C-z" (kbd"C-x u"))
+
 
 ;;M-sを置換に
 (define-key global-map(kbd"C-r")'replace-string)
@@ -49,6 +52,8 @@
 ;; 文字コード
 (prefer-coding-system 'utf-8-unix)
 
+;;最後の行に開業を追加する
+(setq require-final-newline t)
 
 ;; common lisp
 (require 'cl)
@@ -91,6 +96,24 @@
 		    :height 0.9)
 
 
+;;helmの設定
+(require 'helm-config)
+(helm-mode 1)
+
+(define-key helm-map (kbd "C-h") 'delete-backward-char)
+(define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
+
+;; キーバインド
+;;(define-key global-map (kbd "C-x b")   'helm-buffers-list)
+(define-key global-map (kbd "C-x b") 'helm-for-files)
+(define-key global-map (kbd "C-x C-f") 'helm-find-files)
+(define-key global-map (kbd "M-x")     'helm-M-x)
+(define-key global-map (kbd "M-y")     'helm-show-kill-ring)
+
+;;カーソル位置の記憶
+(save-place-mode 1)
+
+
 ;;キー移動を5行づつするやつ
 (define-key global-map "\C-l" (kbd "C-u 5 C-n"))
 (define-key global-map "\C-o" (kbd "C-u 5 C-p"))
@@ -129,7 +152,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auto-complete smartparens pos-tip php-mode gnuplot-mode flycheck)))
+    (madhat2r-theme undo-tree yasnippet jedi markdown-mode py-autopep8 indent-guide helm smart-newline auto-complete smartparens pos-tip php-mode gnuplot-mode flycheck)))
  '(tab-width 4))
 
 ;; yes or noをy or n
@@ -142,21 +165,18 @@
 
 
 ;;カラーテーマ
-(load-theme 'manoj-dark t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(setq custom-theme-directory "~/.emacs.d/themes")
+
+(load-theme 'myTheme-manojo t)
 ;;(load-theme 'dark-laptop t)
+;;(load-theme 'madhat2r t)
 
 
-(set-face-background 'mode-line "Glay")
-
-;; redoできるようにする
-;; http://www.emacswiki.org/emacs/redo+.el
-(when (require 'redo+ nil t)
-    (define-key global-map (kbd "C-Z") 'redo))
+(set-face-background 'mode-line "Black")
 
 
 ;; Auto Complete
-;;
-
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-modes 'text-mode)         ;; text-modeでも自動的に有効にする
@@ -167,33 +187,81 @@
 (setq ac-use-menu-map t)       ;; 補完メニュー表示時にC-n/C-pで補完候補選択
 (setq ac-use-fuzzy t)          ;; 曖昧マッチ
 
-
-;;php-mode
-;;(require 'php-mode)
-
 ;;括弧を表示する
 (require 'smartparens-config)
 (smartparens-global-mode t)
+
+;;smart-newline
+(require 'smart-newline)
+;;(define-key global-map "\C-j" (kbd "RET"))
+(define-key global-map (kbd "\C-j") 'smart-newline)
+;;(define-key global-map (kbd "\C-j") "RET")
+
 
 
 ;;クリップボードの共有
 (defun copy-from-osx ()
   (shell-command-to-string "pbpaste"))
-
 (defun paste-to-osx (text &optional push)
   (let ((process-connection-type nil))
     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
       (process-send-string proc text)
       (process-send-eof proc))))
-
 (setq interprogram-cut-function 'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
 
 
+;; indent-guide
+;; インデントに色つける奴
+(require 'indent-guide)
+(indent-guide-global-mode)
+(set-face-foreground 'indent-guide-face "white")
+;;(setq indent-guide-recursive t)
+
 ;;flycheck
 (require 'flycheck)
 (global-flycheck-mode)
-
 ;;flycheckの設定
 (define-key global-map (kbd "\C-cn") 'flycheck-next-error)
 (define-key global-map (kbd "\C-cp") 'flycheck-previous-error)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;;マークダウン記述するときにつかうもの
+(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+
+;;jedi
+(jedi:setup)
+  (define-key jedi-mode-map (kbd "<C-tab>") nil) ;;C-tabはウィンドウの移動に用いる
+  (setq jedi:complete-on-dot t)
+  (setq ac-sources
+    (delete 'ac-source-words-in-same-mode-buffers ac-sources)) ;;jediの補完候補だけでいい
+  (add-to-list 'ac-sources 'ac-source-filename)
+(add-to-list 'ac-sources 'ac-source-jedi-direct)
+
+;;yasnippetの設定
+;; 自分用・追加用テンプレート -> mysnippetに作成したテンプレートが格納される
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/mysnippets"
+        "~/.emacs.d/yasnippets"
+        ))
+
+;; 既存スニペットを挿入する
+(define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
+;; 新規スニペットを作成するバッファを用意する
+(define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
+;; 既存スニペットを閲覧・編集する
+(define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
+
+(yas-global-mode 1)
+
+;;undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+(setq markdown-command "multimarkdown")
