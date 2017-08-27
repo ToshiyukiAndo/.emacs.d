@@ -39,12 +39,10 @@
 (put 'upcase-region 'disabled nil)
 
 ;;C-zをアンドゥに変更
-;;(define-key global-map(kbd"C-z")'undo)
 (define-key global-map "\C-z" (kbd"C-x u"))
 
-
 ;;M-sを置換に
-(define-key global-map(kbd"C-r")'replace-string)
+(define-key global-map(kbd"C-r")'query-replace)
 
 ;;スクロール一行ずつ
 (setq scroll-step 1)
@@ -96,16 +94,20 @@
 		    :height 0.9)
 
 
+;;emacsの警告音などを消す
+(setq ring-bell-function 'ignore)
+
 ;;helmの設定
 (require 'helm-config)
 (helm-mode 1)
 
 (define-key helm-map (kbd "C-h") 'delete-backward-char)
 (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
+(define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
 
 ;; キーバインド
-;;(define-key global-map (kbd "C-x b")   'helm-buffers-list)
-(define-key global-map (kbd "C-x b") 'helm-for-files)
+(define-key global-map (kbd "C-x b")   'helm-buffers-list)
+(define-key global-map (kbd "C-x f") 'helm-for-files)
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
 (define-key global-map (kbd "M-x")     'helm-M-x)
 (define-key global-map (kbd "M-y")     'helm-show-kill-ring)
@@ -145,15 +147,15 @@
 (setq-default indent-tabs-mode nil)
 
 ;; タブ幅
-(custom-set-variables
+;;(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (madhat2r-theme undo-tree yasnippet jedi markdown-mode py-autopep8 indent-guide helm smart-newline auto-complete smartparens pos-tip php-mode gnuplot-mode flycheck)))
- '(tab-width 4))
+;; '(package-selected-packages
+;;   (quote
+;;    (madhat2r-theme undo-tree yasnippet jedi markdown-mode py-autopep8 indent-guide helm smart-newline auto-complete smartparens pos-tip php-mode gnuplot-mode flycheck)))
+;; '(tab-width 4))
 
 ;; yes or noをy or n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -218,18 +220,6 @@
 (set-face-foreground 'indent-guide-face "white")
 ;;(setq indent-guide-recursive t)
 
-;;flycheck
-(require 'flycheck)
-(global-flycheck-mode)
-;;flycheckの設定
-(define-key global-map (kbd "\C-cn") 'flycheck-next-error)
-(define-key global-map (kbd "\C-cp") 'flycheck-previous-error)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;;マークダウン記述するときにつかうもの
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
@@ -238,12 +228,13 @@
 (jedi:setup)
   (define-key jedi-mode-map (kbd "<C-tab>") nil) ;;C-tabはウィンドウの移動に用いる
   (setq jedi:complete-on-dot t)
-  (setq ac-sources
-    (delete 'ac-source-words-in-same-mode-buffers ac-sources)) ;;jediの補完候補だけでいい
+;;  (setq ac-sources
+;;    (delete 'ac-source-words-in-same-mode-buffers ac-sources)) ;;jediの補完候補だけでいい
   (add-to-list 'ac-sources 'ac-source-filename)
 (add-to-list 'ac-sources 'ac-source-jedi-direct)
 
-;;yasnippetの設定
+
+;;yasnippet
 ;; 自分用・追加用テンプレート -> mysnippetに作成したテンプレートが格納される
 (require 'yasnippet)
 (setq yas-snippet-dirs
@@ -260,8 +251,19 @@
 
 (yas-global-mode 1)
 
+
 ;;undo-tree
+;;\C-zに設定しました
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+
 (setq markdown-command "multimarkdown")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yasnippet undo-tree smartparens smart-newline py-autopep8 pos-tip php-mode markdown-mode madhat2r-theme jedi indent-guide helm gnuplot-mode))))

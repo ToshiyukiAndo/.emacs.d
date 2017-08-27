@@ -1,12 +1,67 @@
 ;;; -*- coding: utf-8 -*-
-(("/Users/negi/.emacs.d/init.el" . 6533)
+(("/Users/negi/Documents/AndroidStudioWorkSpace/MegumiKato_enPiT/README.md" . 283)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/recognition.py" . 15539)
+ ("/Users/negi/.emacs.d/recentf" . 1241)
+ ("/Users/negi/.emacs.d/init.el" . 1359)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment_uist_2.py" . 54030)
+ ("/Users/negi/Library/KeyBindings/DefaultKeyBinding.dict" . 35)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment_uist_3.py" . 4004)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment.py" . 16835)
+ ("/Users/negi/Documents/Programs/python3.4/window.py" . 174)
+ ("/ssh:iplab:/home/ando/"
+  (dired-filename . "/ssh:iplab:/home/ando/.."))
+ ("/ssh:iplab:/home/"
+  (dired-filename . "/ssh:iplab:/home/.."))
+ ("/ssh:iplab:/usr/"
+  (dired-filename . "/ssh:iplab:/usr/.."))
+ ("/ssh:iplab:/"
+  (dired-filename . "/ssh:iplab:/var"))
+ ("/ssh:iplab:/var/"
+  (dired-filename . "/ssh:iplab:/var/backups"))
+ ("/ssh:iplab:/home_ldap/"
+  (dired-filename . "/ssh:iplab:/home_ldap/rtakada"))
+ ("/ssh:iplab:/home_ldap/rtakada/" . 33)
+ ("/ssh:iplab:/sys/"
+  (dired-filename . "/ssh:iplab:/sys/block"))
+ ("/ssh:iplab:/home/ando/public_html/"
+  (dired-filename . "/ssh:iplab:/home/ando/public_html/index.html"))
+ ("/ssh:iplab:/home/ando/public_html/index.html" . 6259)
+ ("/Users/negi/Documents/AndroidStudioWorkSpace/HelloWorld2/README.md" . 22)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/dataTranslate_uist.py" . 1356)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/dtw/dtw_re.py" . 4200)
+ ("/Users/negi/Documents/AndroidStudioWorkSpace/HelloWorld2/.gitignore" . 118)
+ ("/Users/negi/.ssh/config" . 15)
+ ("/Users/negi/.zshfiles/.zshrc" . 220)
+ ("/Users/negi/.zshfiles/.zprofile" . 176)
+ ("/Users/negi/.bashrc" . 120)
+ ("/Users/negi/.zshenv" . 28)
+ ("/etc/shells" . 152)
+ ("/Users/negi/Dropbox/"
+  (dired-filename . "/Users/negi/Dropbox/.."))
+ ("/Users/negi/"
+  (dired-filename . "/Users/negi/.zshenv"))
+ ("/Users/negi/Documents/IPLAB/LabPrograms/README.md" . 2)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/dtw/dtw_word.py" . 5467)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment_uist.py" . 2660)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/Convert.py" . 210)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/Trans.py" . 2096)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment_uist_word.py" . 3707)
+ ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/dataTranslate_uist_word.py" . 4362)
+ ("/Users/negi/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap" . 32540)
+ ("/Users/negi/.emacs.d/"
+  (dired-filename . "/Users/negi/.emacs.d/init.el"))
+ ("/Users/negi/.emacs.d/elpa/auto-complete-20170124.1845/auto-complete-autoloads.el" . 1705)
+ ("/Users/negi/.emacs.d/elpa/dash-20170207.2056/dash-autoloads.el" . 234)
+ ("/Users/negi/.emacs.d/elpa/helm-20170209.513/helm-autoloads.el" . 28950)
+ ("/Users/negi/.emacs.d/elpa/helm-core-20170210.5/helm-core-autoloads.el" . 6344)
+ ("/Users/negi/.emacs.d/elpa/let-alist-1.0.5/let-alist-autoloads.el" . 1280)
+ ("/Users/negi/.emacs.d/elpa/php-mode-20170201.1842/php-mode-autoloads.el" . 1736)
+ ("/Users/negi/.emacs.d/elpa/seq-2.19/seq-autoloads.el" . 277)
+ ("/Users/negi/.emacs.d/elpa/smartparens-20170209.246/smartparens-autoloads.el" . 6490)
  ("/Users/negi/.emacs.d/themes/myTheme-manojo-theme.el" . 6647)
  ("/Users/negi/.emacs.d/elisp/color-theme-6.6.0/themes/color-theme-library.el" . 21449)
  ("/Users/negi/Applications/"
   (dired-filename . "/Users/negi/Applications/.localized"))
- ("/Users/negi/"
-  (dired-filename . "/Users/negi/Applications"))
- ("/Users/negi/.emacs.d/recentf" . 248)
  ("/Users/negi/.emacs.d/elpa/madhat2r-theme-20170202.1630/madhat2r-theme-autoloads.el" . 442)
  ("/Users/negi/.emacs.d/elpa/undo-tree-20161012.701/undo-tree-autoloads.el" . 1653)
  ("/Users/negi/.emacs.d/yasnippets/"
@@ -19,21 +74,10 @@
   (dired-filename . "/Users/negi/Documents/IPLAB/.."))
  ("/Users/negi/Documents/IPLAB/LabPrograms/"
   (dired-filename . "/Users/negi/Documents/IPLAB/LabPrograms/README.md"))
- ("/Users/negi/Documents/IPLAB/LabPrograms/README.md" . 662)
- ("/Users/negi/.emacs.d/"
-  (dired-filename . "/Users/negi/.emacs.d/init.el"))
  ("/Users/negi/.emacs.d/elpa/yasnippet-20170203.626/yasnippet-autoloads.el" . 1604)
- ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/Trans.py" . 3536)
- ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/DataTranslate4Term.py" . 1372)
- ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment_term.py" . 17881)
  ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/recognition-str.py" . 31744)
- ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/recognition.py" . 31511)
  ("/Users/negi/.emacs.d/elpa/jedi-20160425.2156/jedi-autoloads.el" . 944)
  ("/Users/negi/.emacs.d/elpa/jedi-core-20170121.610/jedi-core-autoloads.el" . 3755)
- ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment_uist.py" . 2660)
- ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/experiment.py" . 39477)
- ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/DataTranslate4Here.py" . 1459)
- ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/DataTranslate4.py" . 868)
  ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/"
   (dired-filename . "/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/recognitionHG.py"))
  ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/recognitionHG.py" . 32001)
@@ -54,8 +98,6 @@
   (dired-filename . "/Users/negi/Downloads/.DS_Store"))
  ("/Users/negi/Library/"
   (dired-filename . "/Users/negi/Library/.localized"))
- ("/Users/negi/Dropbox/"
-  (dired-filename . "/Users/negi/Dropbox/.."))
  ("/Users/negi/.subversion/"
   (dired-filename . "/Users/negi/.subversion/.."))
  ("/Users/negi/.emacs.d/elisp/"
@@ -70,8 +112,6 @@
  ("/Users/negi/Documents/IPLAB/LabFiles/README.md" . 10)
  ("/Users/negi/Documents/IPLAB/LabFiles/.gitignore" . 7)
  ("/Users/negi/.gitconfig" . 335)
- ("/Users/negi/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap" . 4895)
- ("/Users/negi/Library/KeyBindings/DefaultKeyBinding.dict" . 72)
  ("/Users/negi/Documents/IPLAB/LabPrograms/MimiSense-py/Old_programs/cross_validation_RF.py" . 550)
  ("/Users/negi/Library/Application Support/Sublime Text 3/Packages/LaTeXTools/builders/traditionalBuilder.py" . 866)
  ("/Users/negi/Pictures/"
